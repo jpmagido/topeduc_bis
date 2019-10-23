@@ -12,4 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require style_1.css
+ *= require assets/imagehover.min.css
+ *= require assets/bootstrap.min.css
+ *= require assets/font-awesome.min.css
  */
