@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :calendar
+
   devise_for :users, controllers: {
         sessions: 'users/sessions', registrations: 'users/registrations'
       }
