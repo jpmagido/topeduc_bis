@@ -17,3 +17,8 @@
  *= require assets/bootstrap.min.css
  *= require assets/font-awesome.min.css
  */
+
+
+#div-main-body {
+	margin-top: 150px;
+}
