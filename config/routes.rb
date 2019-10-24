@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       }
   
   get 'static/home'
+  get 'static/secret_page'
   get 'static/test'
   root 'static#test'
 

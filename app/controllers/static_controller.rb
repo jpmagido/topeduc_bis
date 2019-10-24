@@ -4,4 +4,8 @@ class StaticController < ApplicationController
 
   def test
   end
+
+  def secret_page
+  	
+  end
 end
