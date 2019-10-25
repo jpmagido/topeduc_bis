@@ -19,7 +19,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/edit
   def edit
     super
-      User.update(users_params)
+    @current_user = current_user
+      @current_user.update(users_params)
   end
 
   # PUT /resource
