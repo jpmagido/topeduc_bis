@@ -17,11 +17,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/edit
-  def edit
-    super
-    @current_user = current_user
-      @current_user.update(users_params)
-  end
+  #def edit
+   # super
+   # @current_user = current_user
+   #   @current_user.update(users_params)
+ # end
 
   # PUT /resource
   # def update
