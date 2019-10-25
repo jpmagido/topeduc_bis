@@ -14,10 +14,15 @@
           <li><a href="#organisations">Organisations</a></li>
           <li><a href="#courses">Courses</a></li>
           <li><a href="#pricing">Pricing</a></li>
+                 
+          <% if user_signed_in? %>
+          <li><a href="#pricing"><%= button_to('Me déconnecter', destroy_user_session_path, method: :delete, :class => "btn-trial") %></a></li>
+          <li><%= link_to 'Mon profil', static_secret_page_path %></li>
+
+          <% else %>
           <li><%= link_to "S'inscrire", new_user_registration_path %></a></li>
           <li class="btn-trial"><%= link_to "Se connecter", user_session_path %></a></li>
-          <li><a href="#pricing"><%= button_to('Me déconnecter', destroy_user_session_path, method: :delete, :class => "btn-trial") %></a></li>
-                
+          <% end %>
         </ul>
       </div>
     </div>
