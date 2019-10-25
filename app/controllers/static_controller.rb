@@ -1,4 +1,7 @@
 class StaticController < ApplicationController
+
+	include StaticHelper
+
   def home
   end
 
@@ -15,6 +18,6 @@ class StaticController < ApplicationController
   	@user_adress = current_user.adress
   	@user_zip_code = current_user.ZIP_CODE
   	@user_availability = current_user.availability
-
+  	@user_avail_starts_at = Calendar.where(user_id: current_user.id).ids
   end
 end
