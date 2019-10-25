@@ -16,9 +16,22 @@
  *= require assets/imagehover.min.css
  *= require assets/bootstrap.min.css
  *= require assets/font-awesome.min.css
+ *= require simple_calendar
  */
 
 
 #div-main-body {
 	margin-top: 150px;
+}
+
+#div-calendar-main {
+	margin: 30px;
+	padding: 30px;
+	border: solid;
+}
+
+#div-date-calendar {
+	background-color: #81E069;
+	border-radius: 10px;
+	padding-left: 6px;
 }
