@@ -33,5 +33,6 @@
 #div-date-calendar {
 	background-color: #81E069;
 	border-radius: 10px;
-	padding-left: 6px;
+
+	text-align: center;
 }
