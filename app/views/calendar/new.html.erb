@@ -11,25 +11,25 @@
      </div>
      <%= f.text_field :starts_at, autofocus: true, autocomplete: "starts_at", class: "form-control", placeholder: "Jour" %>
     </div>
-    <div class="form-group input-group">
+    <div class="form-group input-group hidden">
     <div class="input-group-prepend">
         <span class="input-group-text"> </span>
      </div>
-     <%= f.text_field :user_id, autofocus: true, autocomplete: "user_id", class: "form-control", placeholder: "Numéro Utilisateur" %>
+     <%= f.text_field :user_id, value: current_user.id, placeholder: current_user.id %>
     </div>
 
   <div class="form-group input-group">
     <div class="input-group-prepend">
         <span class="input-group-text"> </span>
      </div>
-     <%= f.text_field :pace, autofocus: true, autocomplete: "pace", class: "form-control", placeholder: "Rythme" %>
+     <%= f.text_field :pace, autocomplete: "pace", class: "form-control", placeholder: "Rythme" %>
     </div> <!-- form-group// -->
 	
 	<div class="form-group input-group">
     <div class="input-group-prepend">
         <span class="input-group-text"> </span>
      </div>
-     <%= f.text_field :recurring, autofocus: true, autocomplete: "recurring", class: "form-control", placeholder: "Récurrence" %>
+     <%= f.text_field :recurring, autocomplete: "recurring", class: "form-control", placeholder: "Récurrence" %>
     </div>
 
 
@@ -38,7 +38,7 @@
     <div class="input-group-prepend">
         <span class="input-group-text"> </span>
      </div>
-     <%= f.text_field :duration, autofocus: true, autocomplete: "duration", class: "form-control", placeholder: "Duration" %>
+     <%= f.text_field :duration, autocomplete: "duration", class: "form-control", placeholder: "Duration" %>
     </div>
 
 

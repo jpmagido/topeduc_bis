@@ -11,6 +11,7 @@ class CalendarController < ApplicationController
 
   def create
   	Calendar.create(params_calendar)
+  	redirect_to(static_secret_page_path)
   end
 
   def edit
