@@ -16,8 +16,8 @@
           <li><a href="#pricing">Pricing</a></li>
           <li><%= link_to "S'inscrire", new_user_registration_path %></a></li>
           <li class="btn-trial"><%= link_to "Se connecter", user_session_path %></a></li>
-          <li> <%= link_to "Me Déconnecter", destroy_user_session_path, method: :delete %></li>
-          
+          <li><a href="#pricing"><%= button_to('Me déconnecter', destroy_user_session_path, method: :delete, :class => "btn-trial") %></a></li>
+                
         </ul>
       </div>
     </div>
