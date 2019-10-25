@@ -19,13 +19,13 @@ def create_user
 end
 
 def create_calendar
-	Calendar.create(user_id: 4, starts_at: "2019/10/26", duration: 3, recurring: false)
+	Calendar.create(user_id: User.last.id, starts_at: "2019/10/26", duration: 3, recurring: false)
 
 end
 
 def perform
 	destroy_all
-	#create_user
+	create_user
 	create_calendar
 	puts "Seed done :)"
 end
