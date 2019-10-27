@@ -27,7 +27,7 @@ class ResumeController < ApplicationController
 
   def params_resume
 
-  	params.require(:resume).permit(:image, :user_id)
+  	params.require(:resume).permit(:image, :user_id, :title)
   	
   end
 end
