@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
 
- 
+# Upload Documents: 
   resources :resume
+  resources :permis_b
+
+# Calendar
   resources :calendar
 
+#DEVISE
   devise_for :users, controllers: {
         sessions: 'users/sessions', registrations: 'users/registrations'
       }
-  
+ 
+# Other Routes
   get 'static/home'
   get 'static/secret_page'
   get 'static/test'
