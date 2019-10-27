@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+ 
+  resources :resume
   resources :calendar
 
   devise_for :users, controllers: {
