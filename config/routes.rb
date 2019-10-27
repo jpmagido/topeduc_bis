@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :resume
   resources :permis_b
   resources :diploma
+  resources :kbi
 
 # Calendar:
   resources :calendar
