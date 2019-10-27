@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :kbi
   resources :id
   resources :carte_vitale
+  resources :rib
 
 # Calendar:
   resources :calendar
