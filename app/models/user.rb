@@ -6,4 +6,11 @@ class User < ApplicationRecord
 
   has_many :calendars
   has_many :resumes
+  has_many :ids
+  has_many :diplomas
+  has_many :carte_vitales
+  has_many :kbis
+  has_many :ribs
+  has_many :permis_bs
+  
 end
