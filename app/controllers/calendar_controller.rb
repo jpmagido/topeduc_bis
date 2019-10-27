@@ -23,6 +23,8 @@ class CalendarController < ApplicationController
   	@calendar_to_update.update(params_calendar)
   end
 
+  private
+  
   def params_calendar
   	params.require(:calendar).permit(:user_id, :pace, :starts_at, :duration, :recurring)
   end
