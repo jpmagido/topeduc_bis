@@ -1,6 +1,19 @@
 Rails.application.routes.draw do
 
 
+  namespace :admin do
+      resources :users
+      resources :calendars
+      resources :carte_vitales
+      resources :diplomas
+      resources :ids
+      resources :kbis
+      resources :permis_bs
+      resources :resumes
+      resources :ribs
+
+      root to: "users#index"
+    end
 # Upload Documents: 
   resources :resume
   resources :permis_b
