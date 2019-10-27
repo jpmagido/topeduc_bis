@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_140428) do
+ActiveRecord::Schema.define(version: 2019_10_27_150517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,69 @@ ActiveRecord::Schema.define(version: 2019_10_26_140428) do
     t.index ["user_id"], name: "index_calendars_on_user_id"
   end
 
+  create_table "carte_vitales", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.jsonb "image_data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_carte_vitales_on_user_id"
+  end
+
+  create_table "diplomas", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.jsonb "image_data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_diplomas_on_user_id"
+  end
+
+  create_table "ids", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.jsonb "image_data"
+    t.boolean "recto"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_ids_on_user_id"
+  end
+
+  create_table "kbis", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.jsonb "image_data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_kbis_on_user_id"
+  end
+
+  create_table "permis_bs", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.jsonb "image_data"
+    t.boolean "recto"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_permis_bs_on_user_id"
+  end
+
   create_table "resumes", force: :cascade do |t|
     t.bigint "user_id"
     t.jsonb "image_data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
     t.index ["user_id"], name: "index_resumes_on_user_id"
+  end
+
+  create_table "ribs", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.jsonb "image_data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_ribs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
