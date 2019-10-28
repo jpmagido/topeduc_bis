@@ -77,7 +77,9 @@ module StaticHelper
 	def button_display_rib
 		rib_current_user = Rib.find_by(user_id: current_user.id)
 		if rib_current_user != nil
-			return button_to "Mon RIB", rib_path(rib_current_user.id), method: :get	
+			return (button_to "Mon RIB", rib_path(rib_current_user.id), method: :get) + 
+			(button_to 'x', rib_path(rib_current_user.id), method: :delete) +
+			(button_to 'Edit', edit_rib_path(rib_current_user.id), method: :get)		
 		else
 			return link_to "Ajouter mon RIB", new_rib_path
 		end
