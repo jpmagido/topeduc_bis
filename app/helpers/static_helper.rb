@@ -29,7 +29,7 @@ module StaticHelper
 			return (button_to 'Mes diplômes', diploma_path(diploma_current_user.id), method: :get) +
 			(button_to 'x', diploma_path(diploma_current_user.id), method: :delete) +
 			(button_to 'Edit', edit_diploma_path(diploma_current_user.id), method: :get) +
-			(link_to 'Ajouter un Diplôme', new_diploma_path)
+			(button_to 'Ajouter un Diplôme', new_diploma_path, method: :get)
 		else
 			return link_to 'Ajouter un Diplôme', new_diploma_path
 		end
@@ -39,7 +39,10 @@ module StaticHelper
 	def button_display_id
 		id_current_user = Id.find_by(user_id: current_user.id)
 		if id_current_user != nil
-			return button_to "Ma Carte d'Identité", id_path(id_current_user.id), method: :get	
+			return (button_to "Ma Carte d'Identité", id_path(id_current_user.id), method: :get)	+
+			(button_to 'x', id_path(id_current_user.id), method: :delete) +
+			(button_to 'Edit', edit_id_path(id_current_user.id), method: :get) +
+			(button_to 'Ajouter le Recto', new_id_path, method: :get)
 		else
 			return link_to "Ajouter ma carte d'identité", new_id_path
 		end
