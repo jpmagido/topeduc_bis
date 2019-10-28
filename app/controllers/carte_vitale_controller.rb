@@ -7,12 +7,17 @@ class CarteVitaleController < ApplicationController
 
   def create
   	CarteVitale.create(params_carte_vitale)
+  	redirect_to(static_secret_page_path)
   end
 
   def edit
+  	@carte_to_edit = CarteVitale.find_by(user_id: current_user.id)
   end
 
   def update
+  	@carte_to_edit = CarteVitale.find_by(user_id: current_user.id)
+  	@carte_to_edit.update(params_carte_vitale)
+  	redirect_to(static_secret_page_path)
   end
 
   def show
@@ -20,7 +25,9 @@ class CarteVitaleController < ApplicationController
   end
 
   def destroy
-  	
+  	@carte_to_destroy = CarteVitale.find_by(user_id: current_user.id)
+  	@carte_to_destroy.delete
+  	redirect_to(static_secret_page_path)
   end
 
   private
