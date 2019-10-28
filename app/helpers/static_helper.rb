@@ -26,7 +26,9 @@ module StaticHelper
 	def button_display_diploma
 		diploma_current_user = Diploma.find_by(user_id: current_user.id)
 		if diploma_current_user != nil
-			return button_to 'Mes diplômes', diploma_path(diploma_current_user.id), method: :get	
+			return (button_to 'Mes diplômes', diploma_path(diploma_current_user.id), method: :get) +
+			(button_to 'x', diploma_path(diploma_current_user.id), method: :delete) +
+			(button_to 'Edit', edit_diploma_path(diploma_current_user.id), method: :get)	
 		else
 			return link_to 'Ajouter un Diplôme', new_diploma_path
 		end
