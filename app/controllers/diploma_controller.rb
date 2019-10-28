@@ -21,7 +21,7 @@ class DiplomaController < ApplicationController
   end
 
   def show
-  	@last_diploma = Diploma.last.image_url
+  	@current_user_diploma = Diploma.find_by(user_id: current_user.id).image_url
   end
 
   def destroy
