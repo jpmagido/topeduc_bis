@@ -16,7 +16,7 @@ class KbiController < ApplicationController
 
   def update
   	@kbis_to_edit = Kbi.find_by(user_id: current_user.id)
-  	@kbis_to_edit.update(params_id)
+  	@kbis_to_edit.update(params_kbis)
   	redirect_to(static_secret_page_path)
   end
 
