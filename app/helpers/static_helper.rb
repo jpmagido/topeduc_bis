@@ -4,7 +4,9 @@ module StaticHelper
 	def button_display_resume
 		resume_current_user = Resume.find_by(user_id: current_user.id)
 		if resume_current_user != nil
-			return button_to 'Mon CV', resume_path(resume_current_user.id), method: :get	
+			return (button_to 'Mon CV', resume_path(resume_current_user.id), method: :get) +
+			(button_to 'x', resume_path(resume_current_user.id), method: :delete) +
+			(button_to 'Edit', edit_resume_path(resume_current_user.id), method: :get)
 		else
 			return link_to 'Ajouter un CV', new_resume_path
 		end
