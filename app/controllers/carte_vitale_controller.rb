@@ -21,7 +21,7 @@ class CarteVitaleController < ApplicationController
   end
 
   def show
-  	@last_carte_vitale = CarteVitale.last.image_url
+  	@carte_vitale_current_user = CarteVitale.find_by(user_id: current_user.id).image_url
   end
 
   def destroy
