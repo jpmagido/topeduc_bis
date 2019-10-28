@@ -52,7 +52,9 @@ module StaticHelper
 	def button_display_kbis
 		kbis_current_user = Kbi.find_by(user_id: current_user.id)
 		if kbis_current_user != nil
-			return button_to "Mon Kbis", kbis_path(kbis_current_user.id), method: :get	
+			return (button_to "Mon Kbis", kbi_path(kbis_current_user.id), method: :get) + 
+			(button_to 'x', kbi_path(kbis_current_user.id), method: :delete) +
+			(button_to 'Edit', edit_kbi_path(kbis_current_user.id), method: :get)	
 		else
 			return link_to "Ajouter mon KBIS", new_kbi_path
 		end
