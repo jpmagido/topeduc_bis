@@ -65,7 +65,7 @@ Rails.application.configure do
   config.webpacker.check_yarn_integrity = false
 
   # Letter Opener
-  config.action_mailer.delivery_method = :letter_opener
+  #config.action_mailer.delivery_method = :letter_opener
 
   # ShutDown Mailer if false
   config.action_mailer.perform_deliveries = true
