@@ -10,6 +10,7 @@ gem 'simple_calendar', '~> 2.3'
 gem 'shrine', '~> 3.0', '>= 3.0.1'
 gem 'sendgrid', '~> 1.2', '>= 1.2.4'
 
+
 # Install Devise
 gem 'devise', '~> 4.7.1'
 
@@ -52,6 +53,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener', '~> 1.7'
 end
 
 group :test do
