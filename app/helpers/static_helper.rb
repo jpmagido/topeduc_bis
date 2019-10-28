@@ -1,2 +1,90 @@
 module StaticHelper
+
+	# Button Resume
+	def button_display_resume
+		resume_current_user = Resume.find_by(user_id: current_user.id)
+		if resume_current_user != nil
+			return button_to 'Mon CV', resume_path(resume_current_user.id), method: :get	
+		else
+			return link_to 'Ajouter un CV', new_resume_path
+		end
+	end
+
+	# Button Carte Vitale
+	def button_display_carte_vitale
+		carte_vitale_current_user = CarteVitale.find_by(user_id: current_user.id)
+		if carte_vitale_current_user != nil
+			return button_to 'Mon CV', carte_vitale_path(carte_vitale_current_user.id), method: :get	
+		else
+			return link_to 'Ajouter ma Carte Vitale', new_carte_vitale_path
+		end
+	end
+
+	# Button Diplomes
+	def button_display_diploma
+		diploma_current_user = Diploma.find_by(user_id: current_user.id)
+		if diploma_current_user != nil
+			return button_to 'Mes diplômes', diploma_path(diploma_current_user.id), method: :get	
+		else
+			return link_to 'Ajouter un Diplôme', new_diploma_path
+		end
+	end
+
+	# Button ID
+	def button_display_id
+		id_current_user = Id.find_by(user_id: current_user.id)
+		if id_current_user != nil
+			return button_to "Ma Carte d'Identité", id_path(id_current_user.id), method: :get	
+		else
+			return link_to "Ajouter une carte d'identité", new_id_path
+		end
+	end
+
+	# Button KBIS
+	def button_display_kbis
+		kbis_current_user = Kbi.find_by(user_id: current_user.id)
+		if kbis_current_user != nil
+			return button_to "Mon Kbis", kbis_path(kbis_current_user.id), method: :get	
+		else
+			return link_to "Ajouter mon KBIS", new_kbi_path
+		end
+	end
+
+	# Button Permis B
+	def button_display_permis_b
+		permis_b_current_user = Kbi.find_by(user_id: current_user.id)
+		if permis_b_current_user != nil
+			return button_to "Mon Permis de Conduire", permis_b_path(permis_b_current_user.id), method: :get	
+		else
+			return link_to "Ajouter mon Permis de Conduire", new_permis_b_path
+		end
+	end
+
+	# Button RIB
+	def button_display_rib
+		rib_current_user = Rib.find_by(user_id: current_user.id)
+		if rib_current_user != nil
+			return button_to "Mon RIB", rib_path(rib_current_user.id), method: :get	
+		else
+			return link_to "Ajouter mon RIB", new_rib_path
+		end
+	end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
