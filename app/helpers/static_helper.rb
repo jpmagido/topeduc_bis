@@ -62,9 +62,12 @@ module StaticHelper
 
 	# Button Permis B
 	def button_display_permis_b
-		permis_b_current_user = Kbi.find_by(user_id: current_user.id)
+		permis_b_current_user = PermisB.find_by(user_id: current_user.id)
 		if permis_b_current_user != nil
-			return button_to "Mon Permis de Conduire", permis_b_path(permis_b_current_user.id), method: :get	
+			return (button_to "Mon Permis de Conduire", permis_b_path(permis_b_current_user.id), method: :get) +
+			(button_to 'x', permis_b_path(permis_b_current_user.id), method: :delete) +
+			(button_to 'Edit', edit_permis_b_path(permis_b_current_user.id), method: :get) +
+			(button_to 'Ajouter le Recto', new_permis_b_path, method: :get)	
 		else
 			return link_to "Ajouter mon Permis de Conduire", new_permis_b_path
 		end
