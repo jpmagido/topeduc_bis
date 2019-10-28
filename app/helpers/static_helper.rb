@@ -14,7 +14,7 @@ module StaticHelper
 	def button_display_carte_vitale
 		carte_vitale_current_user = CarteVitale.find_by(user_id: current_user.id)
 		if carte_vitale_current_user != nil
-			return button_to 'Mon CV', carte_vitale_path(carte_vitale_current_user.id), method: :get	
+			return button_to 'Ma Carte Vitale', carte_vitale_path(carte_vitale_current_user.id), method: :get	
 		else
 			return link_to 'Ajouter ma Carte Vitale', new_carte_vitale_path
 		end
@@ -36,7 +36,7 @@ module StaticHelper
 		if id_current_user != nil
 			return button_to "Ma Carte d'Identité", id_path(id_current_user.id), method: :get	
 		else
-			return link_to "Ajouter une carte d'identité", new_id_path
+			return link_to "Ajouter ma carte d'identité", new_id_path
 		end
 	end
 
