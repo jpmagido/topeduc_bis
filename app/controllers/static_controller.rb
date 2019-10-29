@@ -6,6 +6,7 @@ class StaticController < ApplicationController
   end
 
   def test
+
   end
 
   def secret_page
