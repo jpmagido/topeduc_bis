@@ -1,4 +1,5 @@
 class RequestController < ApplicationController
+  
   def index
   	@all_request = Request.all
   end
