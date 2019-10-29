@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
 
 
+# Contracts
+	resources :request
+
 # Upload Documents: 
-  resources :resume
-  resources :permis_b
-  resources :diploma
-  resources :kbi
-  resources :id
-  resources :carte_vitale
-  resources :rib
+	resources :resume
+	resources :permis_b
+	resources :diploma
+	resources :kbi
+	resources :id
+	resources :carte_vitale
+	resources :rib
 
 # Calendar:
   resources :calendar
