@@ -33,7 +33,7 @@ class RequestController < ApplicationController
 
   def params_request
 
-  	params.require(:request).permit(:user_id, :starts_at, :duration, :hourly_rate, :adress, :ZIP_CODE, :client, :driving_licence, :job, :comments, :other, :accepted?, :answer_comments)
+  	params.require(:request).permit(:user_id, :starts_at, :ends_at, :hourly_rate, :adress, :ZIP_CODE, :client, :driving_licence, :job, :comments, :other, :accepted?, :answer_comments)
   	
   end
 
