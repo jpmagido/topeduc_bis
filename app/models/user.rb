@@ -12,5 +12,7 @@ class User < ApplicationRecord
   has_many :kbis
   has_many :ribs
   has_many :permis_bs
+  has_many :requests
+  has_many :contracts
 
 end

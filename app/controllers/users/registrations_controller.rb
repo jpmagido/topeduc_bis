@@ -5,16 +5,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  def new
-    super
-      @new_user = User.new
-  end
+  #def new
+    #super
+      #@new_user = User.new
+  #end
 
   # POST /resource
-  def create
-    super
-      User.create(users_params)
-  end
+  #def create
+    #super
+      #User.create(users_params)
+  #end
 
   # GET /resource/edit
   #def edit
@@ -29,13 +29,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # DELETE /resource
-  def destroy
-    super
-    @current_user = current_user.id
-    @user = User.find(@current_user)
-    @user.destroy
-    redirect_to(root_path)
-  end
+  #def destroy
+    #super
+    #@current_user = current_user.id
+    #@user = User.find(@current_user)
+    #@user.destroy
+    #redirect_to(root_path)
+  #end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign

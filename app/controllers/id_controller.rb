@@ -6,20 +6,27 @@ class IdController < ApplicationController
 
   def create
   	Id.create(params_id)
+  	redirect_to(static_secret_page_path)
   end
 
   def edit
+  	@id_to_edit = Id.find_by(user_id: current_user.id)
   end
 
   def update
+  	@id_to_edit = Id.find_by(user_id: current_user.id)
+  	@id_to_edit.update(params_id)
+  	redirect_to(static_secret_page_path)
   end
 
   def show
-  	@last_id = Id.last.image_url
+  	@current_user_id = Id.find_by(user_id: current_user.id).image_url
   end
 
   def destroy
-  	
+  	@id_to_destroy = Id.find_by(user_id: current_user.id)
+  	@id_to_destroy.delete
+  	redirect_to(static_secret_page_path)
   end
 
   private

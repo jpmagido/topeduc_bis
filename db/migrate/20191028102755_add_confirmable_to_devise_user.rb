@@ -1,3 +1,4 @@
+=begin
 class AddConfirmableToDeviseUser < ActiveRecord::Migration[6.0]
   def up
     add_column :users, :confirmation_token, :string
@@ -17,3 +18,4 @@ class AddConfirmableToDeviseUser < ActiveRecord::Migration[6.0]
     # remove_columns :users, :unconfirmed_email # Only if using reconfirmable
   end
 end
+=end

@@ -9,7 +9,7 @@ gem 'better_errors', '~> 2.5.1'
 gem 'simple_calendar', '~> 2.3'
 gem 'shrine', '~> 3.0', '>= 3.0.1'
 gem 'administrate', '~> 0.12.0'
-gem 'sendgrid', '~> 1.2', '>= 1.2.4'
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 
 
 # Install Devise

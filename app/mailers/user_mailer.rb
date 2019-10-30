@@ -1,4 +1,7 @@
 class UserMailer < Devise::Mailer
+
+	default from: 'from@example.com'
+
 	
   helper :application # gives access to all helpers defined within `application_helper`.
   

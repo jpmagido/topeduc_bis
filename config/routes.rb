@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+# Contracts
+	resources :request
+	resources :contract
 
   namespace :admin do
       resources :users
@@ -15,27 +18,27 @@ Rails.application.routes.draw do
       root to: "users#index"
     end
 # Upload Documents: 
-  resources :resume
-  resources :permis_b
-  resources :diploma
-  resources :kbi
-  resources :id
-  resources :carte_vitale
-  resources :rib
+	resources :resume
+	resources :permis_b
+	resources :diploma
+	resources :kbi
+	resources :id
+	resources :carte_vitale
+	resources :rib
 
 # Calendar:
-  resources :calendar
+	resources :calendar
 
 # DEVISE: 
-  devise_for :users, controllers: {
+	devise_for :users, controllers: {
         sessions: 'users/sessions', registrations: 'users/registrations'
       }
  
 # Other Routes:
-  get 'static/home'
-  get 'static/secret_page'
-  get 'static/test'
-  root 'static#test'
+	get 'static/home'
+	get 'static/secret_page'
+	get 'static/test'
+	root 'static#test'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

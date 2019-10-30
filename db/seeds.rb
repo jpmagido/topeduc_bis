@@ -10,6 +10,8 @@ def destroy_all
 
 	User.destroy_all
 	Calendar.destroy_all
+	Request.destroy_all
+	Contract.destroy_all
 	
 end
 
@@ -23,11 +25,27 @@ def create_calendar
 
 end
 
+def create_request
+	Request.create(user_id: User.last.id, starts_at: "2019/10/31", ends_at: "2019/11/10", hourly_rate: 20, adress: "20 rue du Temple", ZIP_CODE: "75003", client: "BNP Paribas", driving_licence: true, job: "Educateur enfants", comments: "travail avec des handicapés", other: "Attention aux clous", accepted?: nil)
+end
+
+def create_contract
+	Request.last.update(accepted?: true)
+	Contract.create(user_id: User.last.id, request_id: Request.last.id, starts_at: Request.last.starts_at, ends_at: Request.last.ends_at, hourly_rate: Request.last.hourly_rate, adress: Request.last.adress, ZIP_CODE: Request.last.ZIP_CODE, client: Request.last.client, job: Request.last.job, comments: Request.last.comments)
+end
+
 def perform
 	destroy_all
 	create_user
 	create_calendar
+	create_request
+	create_contract
+
 	puts "Seed done :)"
 end
 
 perform
+
+
+
+
