@@ -13,7 +13,8 @@ class RequestController < ApplicationController
   end
 
   def edit
-  	@request_to_edit = Request.find_by(user_id: current_user.id)
+  	@request_to_edit = Request.find_by(user_id: current_user.id) 
+  	@request_to_edit_2 = Request.find(params[:id])
   end
 
   def update
