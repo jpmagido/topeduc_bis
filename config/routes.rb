@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-
 # Contracts
 	resources :request
+	resources :contract
 
 # Upload Documents: 
 	resources :resume
@@ -14,18 +14,18 @@ Rails.application.routes.draw do
 	resources :rib
 
 # Calendar:
-  resources :calendar
+	resources :calendar
 
 # DEVISE: 
-  devise_for :users, controllers: {
+	devise_for :users, controllers: {
         sessions: 'users/sessions', registrations: 'users/registrations'
       }
  
 # Other Routes:
-  get 'static/home'
-  get 'static/secret_page'
-  get 'static/test'
-  root 'static#test'
+	get 'static/home'
+	get 'static/secret_page'
+	get 'static/test'
+	root 'static#test'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
