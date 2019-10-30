@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_28_233117) do
+ActiveRecord::Schema.define(version: 2019_10_29_221631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,23 @@ ActiveRecord::Schema.define(version: 2019_10_28_233117) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_carte_vitales_on_user_id"
+  end
+
+  create_table "contracts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "request_id"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.integer "hourly_rate"
+    t.string "adress"
+    t.string "ZIP_CODE"
+    t.string "client"
+    t.string "job"
+    t.text "comments"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["request_id"], name: "index_contracts_on_request_id"
+    t.index ["user_id"], name: "index_contracts_on_user_id"
   end
 
   create_table "diplomas", force: :cascade do |t|
@@ -76,7 +93,6 @@ ActiveRecord::Schema.define(version: 2019_10_28_233117) do
   create_table "requests", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "starts_at"
-    t.integer "duration"
     t.integer "hourly_rate"
     t.string "adress"
     t.string "ZIP_CODE"
@@ -89,6 +105,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_233117) do
     t.text "answer_comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "ends_at"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
