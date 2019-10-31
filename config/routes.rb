@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-
+# Factures
+	resources :facture
 # Clients
 	resources :client
 # Messages
