@@ -15,9 +15,14 @@ def destroy_all
 	
 end
 
-def create_user
+def create_admin
 
 	User.create(email: "jpmagido@me.com", password: "blablabla", first_name: "Jean-Philippe", last_name: "Magido", job: "Ruby Monster", nationality: "Française", phone: "0686631654", adress: "1 rue des Champs Elysées", ZIP_CODE: "75008", availability: true)
+end
+
+def create_user
+
+	User.create(email: "user01@test.com", password: "blablabla", first_name: "User_01", last_name: "Name_test", job: "BOT", nationality: "Classified", phone: "0686631654", adress: "La cave", ZIP_CODE: "Classified", availability: true)
 end
 
 def create_calendar
@@ -36,6 +41,7 @@ end
 
 def perform
 	destroy_all
+	create_admin
 	create_user
 	create_calendar
 	create_request
