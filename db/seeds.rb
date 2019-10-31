@@ -14,7 +14,8 @@ def destroy_all
 	Contract.destroy_all
 	Message.destroy_all
 	Facture.destroy_all
-	
+	Client.destroy_all
+
 end
 
 def create_admin
@@ -33,16 +34,16 @@ def create_calendar
 end
 
 def create_request
-	Request.create(user_id: User.last.id, starts_at: "2019/10/31", ends_at: "2019/11/10", hourly_rate: 20, adress: "20 rue du Temple", ZIP_CODE: "75003", client: "BNP Paribas", driving_licence: true, job: "Educateur enfants", comments: "travail avec des handicapés", other: "Attention aux clous", accepted?: nil)
+	Request.create(user_id: User.last.id, starts_at: "2019/10/31", ends_at: "2019/11/10", hourly_rate: 20, adress: "20 rue du Temple", ZIP_CODE: "75003", client_id: Client.first.id, driving_licence: true, job: "Educateur enfants", comments: "travail avec des handicapés", other: "Attention aux clous", accepted?: nil)
 end
 
 def create_contract
 	Request.last.update(accepted?: true)
-	Contract.create(user_id: User.last.id, request_id: Request.last.id, starts_at: Request.last.starts_at, ends_at: Request.last.ends_at, hourly_rate: Request.last.hourly_rate, adress: Request.last.adress, ZIP_CODE: Request.last.ZIP_CODE, client: Request.last.client, job: Request.last.job, comments: Request.last.comments)
+	Contract.create(user_id: User.last.id, request_id: Request.last.id, starts_at: Request.last.starts_at, ends_at: Request.last.ends_at, hourly_rate: Request.last.hourly_rate, adress: Request.last.client_id, ZIP_CODE: Request.last.ZIP_CODE, client_id: Request.last.client, job: Request.last.job, comments: Request.last.comments)
 end
 
 def create_facture
-	Facture.create(bill_sender_id: User.first.id, bill_recipient_id: User.last.id, price: 1000, month: "Janvier", TVA: 20.00, advance_payment: nil, xlsx_data: nil)
+	Facture.create(bill_sender_id: User.first.id, bill_recipient_id: User.last.id, client_id: Request.last.client_id, total_price: 1000, month: "Janvier", TVA: 20.00, advance_payment: nil, xlsx_data: nil)
 end
 
 def create_conversation
@@ -58,12 +59,12 @@ def perform
 	destroy_all
 	create_admin
 	create_user
+	create_client
 	create_calendar
 	create_request
 	create_contract
 	create_conversation
 	create_facture
-	create_client
 
 	puts "Seed done :)"
 end

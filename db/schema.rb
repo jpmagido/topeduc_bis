@@ -48,16 +48,17 @@ ActiveRecord::Schema.define(version: 2019_10_31_151533) do
   create_table "contracts", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "request_id"
+    t.bigint "client_id"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.integer "hourly_rate"
     t.string "adress"
     t.string "ZIP_CODE"
-    t.string "client"
     t.string "job"
     t.text "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_contracts_on_client_id"
     t.index ["request_id"], name: "index_contracts_on_request_id"
     t.index ["user_id"], name: "index_contracts_on_user_id"
   end
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 2019_10_31_151533) do
   create_table "factures", force: :cascade do |t|
     t.bigint "bill_sender_id"
     t.bigint "bill_recipient_id"
+    t.bigint "client_id"
     t.integer "total_price"
     t.string "month"
     t.float "TVA"
@@ -83,6 +85,7 @@ ActiveRecord::Schema.define(version: 2019_10_31_151533) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["bill_recipient_id"], name: "index_factures_on_bill_recipient_id"
     t.index ["bill_sender_id"], name: "index_factures_on_bill_sender_id"
+    t.index ["client_id"], name: "index_factures_on_client_id"
   end
 
   create_table "ids", force: :cascade do |t|
@@ -128,11 +131,11 @@ ActiveRecord::Schema.define(version: 2019_10_31_151533) do
 
   create_table "requests", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "client_id"
     t.datetime "starts_at"
     t.integer "hourly_rate"
     t.string "adress"
     t.string "ZIP_CODE"
-    t.string "client"
     t.boolean "driving_licence"
     t.string "job"
     t.text "comments"
@@ -142,6 +145,7 @@ ActiveRecord::Schema.define(version: 2019_10_31_151533) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "ends_at"
+    t.index ["client_id"], name: "index_requests_on_client_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
