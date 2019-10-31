@@ -14,5 +14,9 @@ class User < ApplicationRecord
   has_many :permis_bs
   has_many :requests
   has_many :contracts
+
+#Messages Model links
+  has_many :sent_messages, class_name: "Message", foreign_key: "sender_id"
+  has_many :received_messages, class_name: "Message", foreign_key: "recipient_id"
   
 end
