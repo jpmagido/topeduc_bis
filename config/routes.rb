@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+# Messages
+	resources :message
+	
 # Contracts
 	resources :request
 	resources :contract
