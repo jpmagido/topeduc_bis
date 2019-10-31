@@ -12,6 +12,7 @@ def destroy_all
 	Calendar.destroy_all
 	Request.destroy_all
 	Contract.destroy_all
+	Message.destroy_all
 	
 end
 
@@ -39,6 +40,12 @@ def create_contract
 	Contract.create(user_id: User.last.id, request_id: Request.last.id, starts_at: Request.last.starts_at, ends_at: Request.last.ends_at, hourly_rate: Request.last.hourly_rate, adress: Request.last.adress, ZIP_CODE: Request.last.ZIP_CODE, client: Request.last.client, job: Request.last.job, comments: Request.last.comments)
 end
 
+def create_conversation
+
+	Message.create(title: "Message Test 01", body: "Texte du message Test 01", sender_id: User.first.id, recipient_id: User.last.id, read?: false)
+	
+end
+
 def perform
 	destroy_all
 	create_admin
@@ -46,6 +53,7 @@ def perform
 	create_calendar
 	create_request
 	create_contract
+	create_conversation
 
 	puts "Seed done :)"
 end
