@@ -13,6 +13,7 @@ def destroy_all
 	Request.destroy_all
 	Contract.destroy_all
 	Message.destroy_all
+	Facture.destroy_all
 	
 end
 
@@ -40,10 +41,17 @@ def create_contract
 	Contract.create(user_id: User.last.id, request_id: Request.last.id, starts_at: Request.last.starts_at, ends_at: Request.last.ends_at, hourly_rate: Request.last.hourly_rate, adress: Request.last.adress, ZIP_CODE: Request.last.ZIP_CODE, client: Request.last.client, job: Request.last.job, comments: Request.last.comments)
 end
 
-def create_conversation
+def create_facture
+	Facture.create(bill_sender_id: User.first.id, bill_recipient_id: User.last.id, price: 1000, month: "Janvier", TVA: 20.00, advance_payment: nil, xlsx_data: nil)
+end
 
+def create_conversation
 	Message.create(title: "Message Envoi Test 01", body: "Texte du message Test 01", sender_id: User.first.id, recipient_id: User.last.id, read?: false)
 	Message.create(title: "Message Reçu Test 02", body: "Texte du message Test 02", sender_id: User.last.id, recipient_id: User.first.id, read?: false)
+end
+
+def create_client
+	Client.create(name: "BNP Paribas", n_tva: "FR 99999999999", n_siret: "362 521 879 00034", address: "20 rue du chemin vert", zip_code: "76000" )
 end
 
 def perform
@@ -54,6 +62,8 @@ def perform
 	create_request
 	create_contract
 	create_conversation
+	create_facture
+	create_client
 
 	puts "Seed done :)"
 end

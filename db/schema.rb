@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_222837) do
+ActiveRecord::Schema.define(version: 2019_10_31_151533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 2019_10_30_222837) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_carte_vitales_on_user_id"
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string "name"
+    t.string "n_tva"
+    t.string "n_siret"
+    t.text "address"
+    t.string "zip_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "contracts", force: :cascade do |t|
@@ -59,6 +69,20 @@ ActiveRecord::Schema.define(version: 2019_10_30_222837) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_diplomas_on_user_id"
+  end
+
+  create_table "factures", force: :cascade do |t|
+    t.bigint "bill_sender_id"
+    t.bigint "bill_recipient_id"
+    t.integer "total_price"
+    t.string "month"
+    t.float "TVA"
+    t.jsonb "xlsx_data"
+    t.integer "advance_payment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bill_recipient_id"], name: "index_factures_on_bill_recipient_id"
+    t.index ["bill_sender_id"], name: "index_factures_on_bill_sender_id"
   end
 
   create_table "ids", force: :cascade do |t|

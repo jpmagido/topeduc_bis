@@ -19,4 +19,8 @@ class User < ApplicationRecord
   has_many :sent_messages, class_name: "Message", foreign_key: "sender_id"
   has_many :received_messages, class_name: "Message", foreign_key: "recipient_id"
   
+#Factures Model Links
+  has_many :sent_bills, class_name: "Facture", foreign_key: "bill_sender_id"
+  has_many :received_bills, class_name: "Facture", foreign_key: "bill_recipient_id"
+
 end
