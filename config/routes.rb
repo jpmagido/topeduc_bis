@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+# Clients
+	resources :client
 # Messages
 	resources :message
 	
