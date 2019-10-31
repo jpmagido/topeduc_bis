@@ -4,6 +4,7 @@ class CreateFactures < ActiveRecord::Migration[6.0]
 
       t.references :bill_sender, index: true
       t.references :bill_recipient, index: true
+      t.belongs_to :client, index: true
       t.integer :total_price
       t.string :month
       t.float :TVA
