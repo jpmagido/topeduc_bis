@@ -39,7 +39,7 @@ end
 
 def create_contract
 	Request.last.update(accepted?: true)
-	Contract.create(user_id: User.last.id, request_id: Request.last.id, starts_at: Request.last.starts_at, ends_at: Request.last.ends_at, hourly_rate: Request.last.hourly_rate, adress: Request.last.client_id, ZIP_CODE: Request.last.ZIP_CODE, client_id: Request.last.client, job: Request.last.job, comments: Request.last.comments)
+	Contract.create(user_id: User.first.id, request_id: Request.first.id, starts_at: Request.first.starts_at, ends_at: Request.first.ends_at, hourly_rate: Request.first.hourly_rate, adress: Request.first.adress, ZIP_CODE: Request.first.ZIP_CODE, client_id: Request.first.client_id, job: Request.first.job, comments: Request.first.comments)
 end
 
 def create_facture
