@@ -42,8 +42,8 @@ end
 
 def create_conversation
 
-	Message.create(title: "Message Test 01", body: "Texte du message Test 01", sender_id: User.first.id, recipient_id: User.last.id, read?: false)
-	
+	Message.create(title: "Message Envoi Test 01", body: "Texte du message Test 01", sender_id: User.first.id, recipient_id: User.last.id, read?: false)
+	Message.create(title: "Message Reçu Test 02", body: "Texte du message Test 02", sender_id: User.last.id, recipient_id: User.first.id, read?: false)
 end
 
 def perform
