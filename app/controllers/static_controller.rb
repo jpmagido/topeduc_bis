@@ -20,10 +20,8 @@ class StaticController < ApplicationController
   	@user_zip_code = current_user.ZIP_CODE
   	@user_availability = current_user.availability
   	@user_avail_starts_at = Calendar.where(user_id: current_user.id).ids
-  	@sent_messages = Message.find(User.find(current_user.id).sent_messages.ids[0])
-  	@all_received_messages = current_user.received_messages.all
-  	@all_sent_messages = current_user.sent_messages.all
-  	@received_messages = Message.find(User.find(current_user.id).received_messages.ids[0]).body
-  	@received_messages = Message.find(User.find(current_user.id).received_messages.ids[0]).body
+  	
+  	@all_current_user_received_messages = current_user.received_messages.all
+  	@all_current_user_sent_messages = current_user.sent_messages.all
   end
 end
