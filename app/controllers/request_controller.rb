@@ -1,7 +1,7 @@
 class RequestController < ApplicationController
   
   def index
-  	@all_request = Request.all
+  	@all_requests = Request.all
   end
 
   def new
