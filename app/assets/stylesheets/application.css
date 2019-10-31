@@ -24,15 +24,17 @@
 	margin-top: 150px;
 }
 
-#div-calendar-main {
-	margin: 30px;
-	padding: 30px;
-	border: solid;
-}
 
 #div-date-calendar {
 	background-color: #81E069;
 	border-radius: 10px;
 
 	text-align: center;
+}
+
+
+#div-border {
+	border: solid;
+	margin: 20px;
+	padding: 20px;
 }
