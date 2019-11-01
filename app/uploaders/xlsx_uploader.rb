@@ -1,3 +1,3 @@
-class xlsxUploader < Shrine
+class XlsxUploader < Shrine
   # plugins and uploading logic
 end
