@@ -1,2 +1,2 @@
-module MessagesHelper
+module MessageHelper
 end
