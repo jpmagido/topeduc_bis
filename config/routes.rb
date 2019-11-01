@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+      resources :users
+      resources :calendars
+      resources :carte_vitales
+      resources :clients
+      resources :contracts
+      resources :diplomas
+      resources :factures
+      resources :ids
+      resources :kbis
+      resources :messages
+      resources :permis_bs
+      resources :requests
+      resources :resumes
+      resources :ribs
+
+      root to: "users#index"
+    end
 # Factures
 	resources :facture
 # Clients
