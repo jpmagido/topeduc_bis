@@ -10,7 +10,7 @@ gem 'simple_calendar', '~> 2.3'
 gem 'shrine', '~> 3.0', '>= 3.0.1'
 gem 'sendgrid', '~> 1.2', '>= 1.2.4'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
-
+gem 'administrate', '~> 0.12.0'
 
 # Install Devise
 gem 'devise', '~> 4.7.1'
