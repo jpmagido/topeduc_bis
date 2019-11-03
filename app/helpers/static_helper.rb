@@ -87,6 +87,34 @@ module StaticHelper
 		end
 	end
 
+	#Profil incomplete display
+	def incomplete_profile
+	if current_user.first_name == nil || current_user.last_name == nil || current_user.job == nil || current_user.job == nil || current_user.nationality == nil || current_user.phone == nil || current_user.adress == nil || current_user.ZIP_CODE == nil
+		link_to "PROFIL IMCOMPLET", edit_user_registration_path, :class => "btn btn-secondary btn-block"
+	end
+		
+	end
+
+	def first_name_nil(name)
+
+		if name == "" || name == nil
+			return " M. / Mme."
+		else
+			return name.titleize
+		end	
+	end
+
+	def last_name_nil(name)
+		if name == "" || name == nil
+			return " "
+		else
+			return name.upcase
+		end
+	end
+
+	def hello_name_profile
+		"Bienvenue #{first_name_nil(current_user.first_name)} #{last_name_nil(current_user.last_name)}"
+	end
 end
 
 
