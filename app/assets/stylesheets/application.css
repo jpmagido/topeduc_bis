@@ -31,6 +31,10 @@
 	margin-top: 150px;
 }
 
+#div-main-body-profile {
+	margin-top: 90px;
+}
+
 #div-main-body2 {
 	margin-top: 80px;
 }
@@ -43,6 +47,7 @@
 #div-date-calendar {
 	background-color: #81E069;
 	border-radius: 10px;
+	color: #81E069;
 
 	text-align: center;
 }
@@ -59,6 +64,16 @@
 	border: solid;
 	margin: 20px;
 	padding: 20px;
+}
+
+#div-border-profile {
+	border: solid;
+	padding: 20px;
+	margin: 0 20px 0 20px;
+}
+
+#profile-name {
+	font-size: x-large;
 }
 
 #div-navbar-user {
@@ -81,3 +96,5 @@
 	border-radius: 5px;
 	padding: 5px;
 }
+
+

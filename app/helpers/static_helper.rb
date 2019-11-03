@@ -115,6 +115,7 @@ module StaticHelper
 	def hello_name_profile
 		"Bienvenue #{first_name_nil(current_user.first_name)} #{last_name_nil(current_user.last_name)}"
 	end
+
 end
 
 
