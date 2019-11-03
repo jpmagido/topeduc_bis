@@ -19,7 +19,9 @@
  *= require simple_calendar
  */
 
-
+#feature, #organisations, #work-shop, #faculity-member, #contact {
+	padding-top: 100px;
+}
 
 #div-main-body {
 	margin-top: 150px;
@@ -31,9 +33,7 @@
 #div-main-body3 {
 	margin: 80px 0 40px 0;
 	display: flex;
-	justify-content: center;
-
-	
+	justify-content: center;	
 }
 
 #div-date-calendar {
