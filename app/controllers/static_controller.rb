@@ -25,5 +25,6 @@ class StaticController < ApplicationController
   	@all_current_user_sent_messages = current_user.sent_messages.all
 
   	@user_contract_starts_at = Contract.where(user_id: current_user.id).ids
+  	@all_contracts = Contract.all
   end
 end
