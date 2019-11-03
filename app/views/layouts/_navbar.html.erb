@@ -6,10 +6,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand"><%= image_tag "logo.jpg", alt: "Mon image", width: 170, height: 50 %></a>
+        <a class="navbar-brand" href= <% root_path %>><%= image_tag "logo.jpg", alt: "Mon image", width: 170, height: 50 %></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
+          <li> <%= link_to 'Home', root_path %></li>
           <li><a href="#feature">Identité</a></li>
           <li><a href="#organisations">Engagements</a></li>
           <li><a href="#work-shop">Valeurs</a></li>
