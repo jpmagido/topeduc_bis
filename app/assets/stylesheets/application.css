@@ -23,6 +23,10 @@
 	padding-top: 100px;
 }
 
+#identite, #contrats, #messages, #calendar {
+	padding-top: 100px;
+}
+
 #div-main-body {
 	margin-top: 150px;
 }
@@ -57,3 +61,12 @@
 	padding: 20px;
 }
 
+#div-navbar-user {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 10% 50px 10%;
+	padding: 5px;
+	font-size: large; 
+	border: solid;
+	border-radius: 10px;
+}

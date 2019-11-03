@@ -12,14 +12,14 @@
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :mot_de_passe %>
+          <%= f.label :password %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> caractères minimum)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :confirmation_mot_de_passe %><br />
+          <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
         </div>
         <div class="actions mt-5">
