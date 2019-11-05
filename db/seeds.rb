@@ -29,12 +29,12 @@ def create_user
 end
 
 def create_calendar
-	Calendar.create(user_id: User.last.id, starts_at: "2019/10/26", duration: 3, recurring: false)
+	Calendar.create(user_id: User.first.id, starts_at: "2019/11/02", duration: 8, recurring: false)
 
 end
 
 def create_request
-	Request.create(user_id: User.last.id, starts_at: "2019/10/31", ends_at: "2019/11/10", hourly_rate: 20, adress: "20 rue du Temple", ZIP_CODE: "75003", client_id: Client.first.id, driving_licence: true, job: "Educateur enfants", comments: "travail avec des handicapés", other: "Attention aux clous", accepted?: nil)
+	Request.create(user_id: User.first.id, starts_at: "2019/11/06", ends_at: "2019/11/10", hourly_rate: 20, adress: "20 rue du Temple", ZIP_CODE: "75003", client_id: Client.first.id, driving_licence: true, job: "Educateur enfants", comments: "travail avec des handicapés", other: "Attention aux clous", accepted?: nil)
 end
 
 def create_contract
