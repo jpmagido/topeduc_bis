@@ -1,5 +1,9 @@
 class MessageController < ApplicationController
   def index
+
+  	@all_current_user_received_messages = current_user.received_messages.all
+  	@all_current_user_sent_messages = current_user.sent_messages.all
+  	
   end
 
   def show

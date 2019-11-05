@@ -1,5 +1,7 @@
 class CalendarController < ApplicationController
   def index
+  	@user_contract_starts_at = Contract.where(user_id: current_user.id).ids
+  	@user_avail_starts_at = Calendar.where(user_id: current_user.id).ids
   end
 
   def show
