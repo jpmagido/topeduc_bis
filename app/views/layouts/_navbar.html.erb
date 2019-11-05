@@ -19,7 +19,7 @@
               <li><a href="#contact">Contact</a></li>
             <% else %>
               <li> <%= link_to 'Home', root_path %></li>
-              <li><%= link_to 'Dashboard', static_secret_page_path(anchor: 'div-main-body-profile') %></li>
+              <li><%= link_to 'Dashboard', static_secret_page_path %></li>
               <li><%= link_to 'Messages', message_index_path %></li>
               <li><%= link_to 'Calendrier', calendar_index_path %></li>
             <% end %>
