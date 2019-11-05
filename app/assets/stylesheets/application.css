@@ -79,6 +79,43 @@
 	font-size: x-large;
 }
 
+#div-profile-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+#div-profile-sub-header-icons{
+	display: flex;
+	flex-direction: row;
+}
+
+#div-icon-1 {
+	border: solid;
+	border-radius: 40px;
+	margin-right: 30px;
+	width: 60px;
+	height: 60px;
+	padding: 14px 0 0 15px;
+}
+
+#div-icon-3 {
+	border: solid;
+	border-radius: 40px;
+	margin-right: 30px;
+	width: 60px;
+	height: 60px;
+	padding: 14px 0 0 17px;
+}
+
+#div-icon-2 {
+	border: solid;
+	border-radius: 40px;
+	margin-right: 30px;
+	width: 60px;
+	height: 60px;
+	padding: 15px 0 0 12px;
+}
+
 #div-navbar-user {
 	display: flex;
 	justify-content: space-between;
