@@ -26,5 +26,13 @@ class StaticController < ApplicationController
 
   	@user_contract_starts_at = Contract.where(user_id: current_user.id).ids
   	@all_contracts = Contract.all
+  	
+  	@user_resume = Resume.find_by(user_id: current_user.id)
+  	@user_id = Id.find_by(user_id: current_user.id)
+  	@user_rib = Rib.find_by(user_id: current_user.id)
+  	@user_permis_b = PermisB.find_by(user_id: current_user.id)
+  	@user_kbis = Kbi.find_by(user_id: current_user.id)
+  	@user_diploma = Diploma.find_by(user_id: current_user.id)
+  	@user_carte_vitale = CarteVitale.find_by(user_id: current_user.id)
   end
 end
